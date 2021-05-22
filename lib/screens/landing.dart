@@ -169,23 +169,26 @@ class _LandingScreenState extends State<LandingScreen> {
         scrollDirection: Axis.horizontal,
         itemCount: petsFilter.length,
         itemBuilder: (BuildContext context, int index){
-          return Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(9),
-              color: petSelected == petsFilter[index] ? Colors.red : Colors.grey[200],
+          return GestureDetector(
+            onTap: () => setState(() => petSelected = petsFilter[index]),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(9),
+                color: petSelected == petsFilter[index] ? Colors.red : Colors.grey[200],
+              ),
+              width: 60,
+              padding: EdgeInsets.all(3),
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(
+                right: 30
+              ),
+              child: Text(petsFilter[index],
+              style: TextStyle(
+                color: petSelected == petsFilter[index] ? Colors.white : Colors.black,
+                fontWeight: FontWeight.bold
+              ),
+              )
             ),
-            width: 60,
-            padding: EdgeInsets.all(3),
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(
-              right: 30
-            ),
-            child: Text(petsFilter[index],
-            style: TextStyle(
-              color: petSelected == petsFilter[index] ? Colors.white : Colors.black,
-              fontWeight: FontWeight.bold
-            ),
-            )
           );
         },
       ),
@@ -231,7 +234,7 @@ class _LandingScreenState extends State<LandingScreen> {
               Container(
                 padding: EdgeInsets.only(
                   left: 10,
-                  right: 10
+                  right: 20
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -243,10 +246,13 @@ class _LandingScreenState extends State<LandingScreen> {
                           fontSize: 20,
                           fontWeight: FontWeight.bold
                         )),
-                        Icon(Icons.favorite_outline)
+                        Icon(Icons.favorite_outline, color: Colors.red)
                       ],
                     ),
-                    Text('${pets[index].raze}')
+                    SizedBox(height: 10),
+                    Text('${pets[index].raze}', style: TextStyle(
+                      color: Colors.grey[500]
+                    ))
                   ],
                 ),
               )
