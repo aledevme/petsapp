@@ -14,13 +14,6 @@ class _LandingScreenState extends State<LandingScreen> {
     'Otros'
   ];
   
-  List<Color> colors = [
-    
-    
-    Color(0xfff77f00),
-    Color(0xfffcbf49),
-    Color(0xffeae2b7),
-  ];
 
   List<Pet> pets = [
     Pet(
