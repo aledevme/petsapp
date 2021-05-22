@@ -5,12 +5,29 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+  
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          header()
+          header(),
+          SizedBox(height: 30),
+          location(),
+          SizedBox(height: 20),
+          Container(
+            padding: EdgeInsets.only(
+              left:40,
+              right: 40
+            ),
+            child: Divider(
+              thickness: 2,
+              color: Colors.grey[200],
+            ),
+          )
         ],
       ),
     );
@@ -47,10 +64,49 @@ class _LandingScreenState extends State<LandingScreen> {
   } 
 
   Widget location(){
-    return Container();
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 40
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 60,
+            ),
+            child: Text('Ubicación', style: TextStyle(
+              color: Colors.grey[400]
+            )),
+          ),
+          SizedBox(height: 10),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.location_on_outlined),
+              SizedBox(width: 35),
+              Flexible(
+                child: Text('San Salvador,', style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900
+                )),
+              ),
+              SizedBox(width: 10),
+              Text('SV', style: TextStyle(
+                fontSize: 30,
+                color: Colors.grey[500],
+                fontWeight: FontWeight.normal
+              )),
+            ],
+          )
+        ],
+      ),
+    );
   }
   Widget filters(){
-    return Container();
+    return Container(
+      
+    );
   }
 
   Widget petsList(){
