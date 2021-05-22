@@ -15,8 +15,8 @@ class _LandingScreenState extends State<LandingScreen> {
   ];
   
   List<Color> colors = [
-    Color(0xff003049),
-    Color(0xffd62828),
+    
+    
     Color(0xfff77f00),
     Color(0xfffcbf49),
     Color(0xffeae2b7),
@@ -27,16 +27,19 @@ class _LandingScreenState extends State<LandingScreen> {
       name: 'Carlos',
       raze: 'Pitbull',
       urlImage: 'http://assets.stickpng.com/images/5847f60fcef1014c0b5e48a2.png',
+      color: 0xff003049,
     ),
     Pet(
       name: 'Bobby',
       raze: 'Shitzu',
-      urlImage: 'https://lh3.googleusercontent.com/proxy/5tCM1jKo7FiqKIIokqT2SO5VJCEUxCDSmnDRiM__rLvzCLih4urRnil-dK77XOjcE8SWvOVwbBNTif1YxGeKDXw_Z1sx_RBIiHkfX0IzoJ3SsPQ_dSQiSifW'
+      urlImage: 'https://www.nicepng.com/png/full/58-585705_shih-tzu-png-free-transparent-shih-tzu-cute.png',
+      color: 0xffeae2b7,
     ),
     Pet(
       name: 'Rocket',
       raze: 'Bulldog',
-      urlImage: 'https://lh3.googleusercontent.com/proxy/yQlhkoLm7tJp7DFhT96eD6NzAqVU4Iri-tPn0UIUNY2szghCg9JwogvnGaA0MFrNnR2KFV3Eb4fdyz9dVVg3t-4Y-khGfNpKl_83Mz-_ovNEjaBcyHLa1_MjSm8vvtQD'
+      urlImage: 'https://lh3.googleusercontent.com/proxy/3th44nad8gpAnh9QxMqkbs1H5DmlwFDQul9FcBlDvR53UqKoDVEAQ__8MxYAmqbdyvdOh8e4jWrjg45k0WuPxZ3JwAO9deYmpUSd734AZEBYAmon7jp9uUoN3Q',
+      color: 0xffd62828,
     )
   ];
   String petSelected="";
@@ -222,7 +225,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20)
                   ),
-                  color: (colors..shuffle()).first
+                  color: Color(pets[index].color)
                 ),
                 child: FadeInImage(
                   fit: BoxFit.cover,
